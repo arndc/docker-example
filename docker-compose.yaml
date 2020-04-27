@@ -1,0 +1,18 @@
+version: '3'
+services:
+  api:
+    build: ./api
+    image: arnedc.me/docker-example-api:1.0.0
+    container_name: docker-example-api
+    restart: always
+  webapp:
+    build: ./webapp
+    image: arnedc.me/docker-example-webapp:1.0.0
+    container_name: docker-example-webapp
+    restart: always
+  gateway:
+    build: ./gateway
+    image: arnedc.me/docker-example-gateway:1.0.0
+    container_name: docker-example-gateway
+    ports:
+    - "9000:9000"
